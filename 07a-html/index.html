@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Page</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    #loginForm {
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="loginForm">
+    <h2>Login</h2>
+    <label for="username">Username:</label>
+    <input type="text" id="username" placeholder="Enter your username">
+
+    <label for="password">Password:</label>
+    <input type="password" id="password" placeholder="Enter your password">
+
+    <button onclick="login()">Login</button>
+    <p id="showcase"></p>
+
+    <script>
+      const credentials = {
+        username: "exampleUser",
+        password: "examplePassword"
+      };
+
+      function login() {
+        const enteredUsername = document.getElementById("username").value;
+        const enteredPassword = document.getElementById("password").value;
+        const showcase = document.getElementById("showcase");
+        if (enteredUsername === credentials.username && enteredPassword === credentials.password) {
+          alert("Welcome!");
+            showcase.innerHTML = "Welcome!";
+        } else {
+          alert("Insufficient credentials. Please try again.");
+            showcase.innerHTML = "Insufficient credentials. Please try again.";
+        }
+      }
+    </script>
+  </div>
+
+</body>
+</html>

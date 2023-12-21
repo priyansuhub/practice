@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculator</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    table {
+      border-collapse: collapse;
+      text-align: center;
+    }
+
+    td {
+      border: 1px solid black;
+      padding: 10px;
+    }
+
+    .square {
+      width: 100%;
+      background-color: #ffffff;
+      padding: 10px;
+    }
+
+    input {
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    button {
+      width: 100%;
+      padding: 10px;
+      cursor: pointer;
+    }
+
+    .result {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <table>
+    <tr>
+      <td colspan="4"><div class="square">MY CALCULATOR</div></td>
+    </tr>
+    <tr>
+      <td>Value 1</td>
+      <td><input type="number" id="value1" placeholder="0" /></td>
+      <td>Value 2</td>
+      <td><input type="number" id="value2" placeholder="0" /></td>
+    </tr>
+    <tr>
+      <td><button onclick="performOperation('add')">ADDITION</button></td>
+      <td><button onclick="performOperation('subtract')">SUBTRACTION</button></td>
+      <td><button onclick="performOperation('multiply')">MULTIPLICATION</button></td>
+      <td><button onclick="performOperation('divide')">DIVISION</button></td>
+    </tr>
+    <tr>
+      <td colspan="2">Result:</td>
+      <td class="result" colspan="2">0</td>
+    </tr>
+    <tr>
+      <td colspan="4"><button onclick="resetCalculator()">RESET</button></td>
+    </tr>
+  </table>
+
+  <script>
+    function performOperation(operation) {
+      const value1 = parseFloat(document.getElementById('value1').value);
+      const value2 = parseFloat(document.getElementById('value2').value);
+      let result;
+
+      switch (operation) {
+        case 'add':
+          result = value1 + value2;
+          break;
+        case 'subtract':
+          result = value1 - value2;
+          break;
+        case 'multiply':
+          result = value1 * value2;
+          break;
+        case 'divide':
+          result = value1 / value2;
+          break;
+        default:
+          break;
+      }
+
+      document.querySelector('.result').textContent = isNaN(result) ? 'Invalid Operation' : result;
+    }
+
+    function resetCalculator() {
+      document.getElementById('value1').value = '';
+      document.getElementById('value2').value = '';
+      document.querySelector('.result').textContent = '0';
+    }
+  </script>
+
+</body>
+</html>

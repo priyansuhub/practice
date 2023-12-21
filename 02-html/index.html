@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Write an HTML code for creating a enquiry form which accepts the
+following data.
+i. Your Name text box with restriction that maximum length is 25
+characters. The text box must display "enter your name here" in
+faded colour.
+ii. Date of birth⇒you will be able to enter date manually as well as
+calendar option must be there to select date.
+iii. Email id in valid format
+iv. Gender radio buttons. Male must be checked by default
+V.
+Hobby check boxes for singing, painting, outdoor game Multiple
+check box can be selected.
+vi. State drop down list that contains names of some states
+vii. Comment box→ Here you can write few lines
+viii. Submit button→ On clicking the submit button a thank you message
+for the user like "Thank you Mr/Mrs------should be displayed.
+ix. Reset button→ On clicking this button the entered data in the form
+should be cleared. -->
+<div>
+    <form id="enquiryForm" action="#" method="post">
+    <label for="name">Your Name:</label>
+    <input type="text" id="name" name="name" placeholder="Enter your name here" maxlength="25" required>
+    <label for="dob">Date of Birth:</label>
+    <input type="date" id="dob" name="dob" required>
+
+    <label for="email">Email ID:</label>
+    <input type="email" id="email" name="email" required>
+
+
+    <label>Gender:</label>
+    <input type="radio" id="male" name="gender" value="male" checked>
+    <label for="male">Male</label>
+    <input type="radio" id="female" name="gender" value="female">
+    <label for="female">Female</label>
+
+    <label>Hobbies:</label>
+    <input type="checkbox" id="singing" name="hobbies" value="singing">
+    <label for="singing">Singing</label>
+    <input type="checkbox" id="painting" name="hobbies" value="painting">
+    <label for="painting">Painting</label>
+    <input type="checkbox" id="outdoorGame" name="hobbies" value="outdoorGame">
+    <label for="outdoorGame">Outdoor Game</label>
+
+    <label for="state">State:</label>
+    <select id="state" name="state">
+      <option value="state1">State 1</option>
+      <option value="state2">State 2</option>
+    </select>
+
+    <label for="comment">Comments:</label>
+    <textarea id="comment" name="comment" rows="4" cols="50"></textarea>
+
+    <input type="submit" value="Submit">
+    <input type="reset" value="Reset">
+    </form>
+</div>
+
+</body>
+</html>
